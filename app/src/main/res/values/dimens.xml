@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_fragment">20sp</dimen>
+    <dimen name="text_size_edit_text">20sp</dimen>
+
+    <dimen name="padding_main">20dp</dimen>
+
+
+    <dimen name="top_menu_height">56dp</dimen>
+
+    <dimen name="fragment_btn_height">56dp</dimen>
+
+    <dimen name="margin_btns">10dp</dimen>
+
+    <dimen name="margin_small">4dp</dimen>
+
+    <dimen name="grid_view_photo_padding">5dp</dimen>
+
+    <!--        albums fragment     -->
+    <dimen name="albums_spinner_padding">5dp</dimen>
+
+    <!--        photo fullscreen fragment       -->
+    <dimen name="photo_fullscreen_control_elements_height">32dp</dimen>
+    <dimen name="overlay_padding">6dp</dimen>
+
+    <!--        fullscreen fragment     -->
+    <dimen name="fullscreen_fragment_text_title">24sp</dimen>
+    <dimen name="fullscreen_fragment_text_message">18sp</dimen>
+
+    <!--        main menu interface     -->
+    <dimen name="view_pager_text_size">15sp</dimen>
+
+    <!--        photo info     -->
+    <dimen name="photo_info_text_title">15sp</dimen>
+    <dimen name="photo_info_text_description">18sp</dimen>
+
+    <!--        google maps fragment    -->
+    <dimen name="gmaps_fragment_buttons_height">38dp</dimen>
+    <dimen name="gmaps_fragment_buttons_padding">12dp</dimen>
+    <dimen name="gmaps_fragment_buttons_half_padding">6dp</dimen>
+    <!-- gmaps_fragment_buttons_height + 2*gmaps_fragment_buttons_padding -->
+    <dimen name="gmaps_location_text_end_margin">62dp</dimen>
+    <!-- gmaps_fragment_buttons_height + gmaps_fragment_buttons_padding -->
+    <dimen name="gmaps_btns_layout_end_margin">50dp</dimen>
+    <!-- gmaps_fragment_buttons_half_padding -->
+    <dimen name="gmaps_btns_layout_bottom_margin">6dp</dimen>
+
+    <!--        wheel progress bar      -->
+    <dimen name="wheelProgressBarSize">200dp</dimen>
+    <dimen name="wheelProgressBarTextSize">20sp</dimen>
+    <dimen name="wheelProgressBarProgressLength">75dp</dimen>
+    <dimen name="wheelProgressBarRimWidth">4dp</dimen>
+    <dimen name="wheelProgressBarProgressWidth">8dp</dimen>
+    <dimen name="smallWheelProgressBarPadding">20dp</dimen>
+
+</resources>

@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fullscreenFragmentBackground">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/content_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btnViewDelete"
+            android:layout_width="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_height="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/delete"
+            android:scaleType="fitCenter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewPhotoName"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:textColor="@color/photoInfoFragmentTextDescription"
+            android:textSize="@dimen/photo_info_text_title"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnViewClose"
+            app:layout_constraintStart_toEndOf="@+id/btnViewDelete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnViewClose"
+            android:layout_width="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_height="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/close"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/infoLayout"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textViewDescriptionTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_description"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionTitle" />
+
+            <TextView
+                android:id="@+id/textViewLocationTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_location"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+            <TextView
+                android:id="@+id/textViewLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLocationTitle" />
+
+            <TextView
+                android:id="@+id/textViewTakenByTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_taken_by"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLocation" />
+
+            <TextView
+                android:id="@+id/textViewTakenBy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTakenByTitle" />
+
+            <TextView
+                android:id="@+id/textViewDateTakenTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_date_taken"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTakenBy" />
+
+            <TextView
+                android:id="@+id/textViewDateTaken"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDateTakenTitle" />
+
+            <TextView
+                android:id="@+id/textViewTagsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_tags"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewDateTaken" />
+
+            <TextView
+                android:id="@+id/textViewTags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTagsTitle" />
+
+            <TextView
+                android:id="@+id/textViewLicenseTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_license"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTags" />
+
+            <TextView
+                android:id="@+id/textViewLicense"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLicenseTitle" />
+
+            <TextView
+                android:id="@+id/textViewPrivacyTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_privacy"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewLicense" />
+
+            <TextView
+                android:id="@+id/textViewPrivacy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPrivacyTitle" />
+
+            <TextView
+                android:id="@+id/textViewViewsCountTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:text="@string/photo_info_views_count"
+                android:textColor="@color/photoInfoFragmentTextTitle"
+                android:textSize="@dimen/photo_info_text_title"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewPrivacy" />
+
+            <TextView
+                android:id="@+id/textViewViewsCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:gravity="start"
+                android:textColor="@color/photoInfoFragmentTextDescription"
+                android:textSize="@dimen/photo_info_text_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewViewsCountTitle" />
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/infoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/fullscreenFragmentBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_layout">
+
+        <TextView
+            android:id="@+id/text_view_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:textColor="@color/photoInfoFragmentTextDescription"
+            android:textSize="@dimen/photo_info_text_title"
+            android:textStyle="bold"
+            ProgressWheel:layout_constraintEnd_toEndOf="parent"
+            ProgressWheel:layout_constraintStart_toStartOf="parent"/>
+
+        <com.todddavies.components.progressbar.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="@dimen/wheelProgressBarSize"
+            android:layout_height="@dimen/wheelProgressBarSize"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            ProgressWheel:pwBarColor="@color/photoInfoFragmentTextTitle"
+            ProgressWheel:pwBarLength="@dimen/wheelProgressBarProgressLength"
+            ProgressWheel:pwBarWidth="@dimen/wheelProgressBarRimWidth"
+            ProgressWheel:pwRimColor="@color/photoInfoFragmentTextDescription"
+            ProgressWheel:pwRimWidth="@dimen/wheelProgressBarProgressWidth"
+            ProgressWheel:pwText="@string/progress_bar_loading"
+            ProgressWheel:pwTextColor="@color/photoInfoFragmentTextDescription"
+            ProgressWheel:pwTextSize="@dimen/wheelProgressBarTextSize" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

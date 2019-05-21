@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#30333F</color>
+    <color name="colorPrimaryDark">#30333F</color>      <!-- status bar background  -->
+    <color name="colorAccent">#30333F</color>
+    <color name="white">#FFFFFF</color>
+    <color name="fragmentContainerBackground">#FF5555</color>
+    <!--            main menu          -->
+    <color name="viewPagerTitleText">#FFFFFF</color>
+
+    <!--            bottom navigation view          -->
+    <color name="bottomNavigationBackground">#30333F</color>
+    <color name="bottomNavigationItem">#A9A9A9</color>
+    <color name="bottomNavigationSelectedItem">#FFFFFF</color>
+
+    <!--            fragments               -->
+    <color name="backgroundCameraRoll">#B5B5B5</color>
+    <color name="backgroundPublicPhotos">#D0D0D0</color>
+    <color name="backgroundAlbums">#EAEAEA</color>
+    <color name="backgroundContactList">#d1d1cf</color>
+    <color name="backgroundRecent">#EAEAEA</color>
+    <color name="backgroundLocation">#EAEAEA</color>
+    <color name="backgroundProfile">#EAEAEA</color>
+    <color name="textOnBackground">#30333F</color>
+    <color name="textLastPage">#9930333F</color>
+
+    <!--        wheel progress bar      -->
+    <color name="wheelProgressBarText">#30333F</color>
+    <color name="wheelProgressBarRim">#6630333F</color>
+    <color name="wheelProgressBarProgress">#505360</color>
+
+    <!--        gmaps fragment          -->
+    <color name="gmapsFragmentBtnBackground">#DFFFFFFF</color>
+    <color name="gmapsFragmentBtnText">#666666</color>
+
+    <color name="photoBackground">#898989</color>
+
+    <color name="messageFragmentText">#EAEAEA</color>
+    <color name="messageFragmentButtonBackground">#EAEAEA</color>
+    <color name="messageFragmentButtonText">#22222A</color>
+
+    <!--        photo info and fullscreen fragments     -->
+    <color name="fullscreenFragmentBackground">#30333F</color>
+    <color name="photoInfoFragmentBackgroundSecond">#EAEAEA</color>
+    <color name="photoInfoFragmentTextDescription">#EAEAEA</color>
+    <color name="photoInfoFragmentTextTitle">#9A9A9A</color>
+    <color name="photoInfoFragmentButton">#EAEAEA</color>
+    <color name="photoInfoFragmentButtonText">#30333F</color>
+
+    <color name="photoOverlayBackgroundStart">#FF30333F</color>
+    <color name="photoOverlayBackgroundEnd">#4430333F</color>
+
+    <color name="photoRecyclerViewOverlayBackground">#3C4259</color>
+    <color name="transparency">#00000000</color>
+
+</resources>

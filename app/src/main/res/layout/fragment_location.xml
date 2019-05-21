@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/main_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLocation"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    app:ignore="NamespaceTypo">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_albums"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_menu_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_small">
+
+        <TextView
+            android:id="@+id/text_view_location_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:textColor="@color/fullscreenFragmentBackground"
+            android:textSize="@dimen/photo_info_text_title"
+            android:textStyle="bold"
+            ProgressWheel:layout_constraintBottom_toBottomOf="parent"
+            ProgressWheel:layout_constraintEnd_toStartOf="@+id/btn_set_location"
+            ProgressWheel:layout_constraintStart_toStartOf="parent"
+            ProgressWheel:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_set_location"
+            android:layout_width="@dimen/top_menu_height"
+            android:layout_height="@dimen/top_menu_height"
+            android:layout_marginBottom="4dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/map"
+            ProgressWheel:layout_constraintBottom_toBottomOf="parent"
+            ProgressWheel:layout_constraintEnd_toEndOf="parent"
+            ProgressWheel:layout_constraintStart_toEndOf="@+id/text_view_location_name"
+            ProgressWheel:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/text_view_location_name" />
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_below="@+id/layout_albums">
+
+        <TextView
+            android:id="@+id/text_view_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/fullscreenFragmentBackground"
+            android:textSize="@dimen/photo_info_text_title"
+            android:textStyle="bold"
+            android:text="@string/location_hint_for_user"/>
+
+        <com.todddavies.components.progressbar.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="@dimen/wheelProgressBarSize"
+            android:layout_height="@dimen/wheelProgressBarSize"
+            android:layout_gravity="center"
+            ProgressWheel:pwText="@string/progress_bar_loading"
+            ProgressWheel:pwTextColor="@color/wheelProgressBarText"
+            ProgressWheel:pwTextSize="@dimen/wheelProgressBarTextSize"
+            ProgressWheel:pwRimColor="@color/wheelProgressBarRim"
+            ProgressWheel:pwBarLength="@dimen/wheelProgressBarProgressLength"
+            ProgressWheel:pwBarColor="@color/wheelProgressBarProgress"
+            ProgressWheel:pwBarWidth="@dimen/wheelProgressBarRimWidth"
+            ProgressWheel:pwRimWidth="@dimen/wheelProgressBarProgressWidth" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_photos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/child_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>

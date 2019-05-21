@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fullscreenFragmentBackground">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="@dimen/top_menu_height"
+            android:layout_height="@dimen/top_menu_height"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewAboutApp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/top_menu_height"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:gravity="center"
+            android:text="@string/about_app"
+            android:textColor="@color/photoInfoFragmentTextDescription"
+            android:textSize="@dimen/photo_info_text_title"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btnViewClose"
+            app:layout_constraintStart_toEndOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnViewClose"
+            android:layout_width="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_height="@dimen/photo_fullscreen_control_elements_height"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/close"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewViewsAppNameTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textStyle="bold"
+            android:text="@string/application_name"
+            android:textColor="@color/photoInfoFragmentTextTitle"
+            android:textSize="@dimen/photo_info_text_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAboutApp" />
+
+        <TextView
+            android:id="@+id/textViewViewsAppNameDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:text="@string/app_name"
+            android:textColor="@color/photoInfoFragmentTextDescription"
+            android:textSize="@dimen/photo_info_text_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewViewsAppNameTitle" />
+
+        <TextView
+            android:id="@+id/textViewViewsAppVersionTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textStyle="bold"
+            android:text="@string/version"
+            android:textColor="@color/photoInfoFragmentTextTitle"
+            android:textSize="@dimen/photo_info_text_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewViewsAppNameDescription" />
+
+        <TextView
+            android:id="@+id/textViewViewsAppVersionDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="start"
+            android:textColor="@color/photoInfoFragmentTextDescription"
+            android:textSize="@dimen/photo_info_text_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewViewsAppVersionTitle" />
+
+        <Button
+            android:id="@+id/btnFeedback"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fragment_btn_height"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/feedback"
+            android:background="@color/messageFragmentButtonBackground"
+            android:textColor="@color/messageFragmentButtonText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>

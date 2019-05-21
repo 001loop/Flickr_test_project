@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ProgressWheel="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundAlbums">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_albums"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/top_menu_height"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:padding="@dimen/margin_small">
+
+        <Spinner
+            android:id="@+id/spinner_albums"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </Spinner>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/child_fragment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_below="@+id/layout_albums">
+
+        <TextView
+            android:id="@+id/text_view_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/messageFragmentText"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/album_no_photo"/>
+
+        <com.todddavies.components.progressbar.ProgressWheel
+            android:id="@+id/progress_wheel"
+            android:layout_width="@dimen/wheelProgressBarSize"
+            android:layout_height="@dimen/wheelProgressBarSize"
+            android:layout_gravity="center"
+            ProgressWheel:pwText="@string/progress_bar_loading"
+            ProgressWheel:pwTextColor="@color/wheelProgressBarText"
+            ProgressWheel:pwTextSize="@dimen/wheelProgressBarTextSize"
+            ProgressWheel:pwRimColor="@color/wheelProgressBarRim"
+            ProgressWheel:pwBarLength="@dimen/wheelProgressBarProgressLength"
+            ProgressWheel:pwBarColor="@color/wheelProgressBarProgress"
+            ProgressWheel:pwBarWidth="@dimen/wheelProgressBarRimWidth"
+            ProgressWheel:pwRimWidth="@dimen/wheelProgressBarProgressWidth" />
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view_photos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+    </FrameLayout>
+
+</RelativeLayout>

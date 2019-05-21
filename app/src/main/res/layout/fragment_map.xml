@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundLocation">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/textViewLocationName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/gmaps_fragment_buttons_height"
+        android:layout_marginStart="@dimen/gmaps_fragment_buttons_padding"
+        android:layout_marginTop="@dimen/gmaps_fragment_buttons_padding"
+        android:layout_marginBottom="@dimen/gmaps_fragment_buttons_padding"
+        android:layout_marginEnd="@dimen/gmaps_location_text_end_margin"
+        android:gravity="center"
+        android:textColor="@color/fullscreenFragmentBackground"
+        android:shadowColor="@color/photoInfoFragmentTextDescription"
+        android:textSize="@dimen/photo_info_text_title"
+        android:textStyle="bold"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="4"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom"
+        android:layout_marginEnd="@dimen/gmaps_btns_layout_end_margin"
+        android:layout_marginBottom="@dimen/gmaps_btns_layout_bottom_margin"
+        android:padding="@dimen/gmaps_fragment_buttons_padding">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/gmaps_fragment_buttons_height"
+            android:layout_marginEnd="@dimen/gmaps_fragment_buttons_half_padding"
+            android:layout_weight="1"
+            android:background="@color/gmapsFragmentBtnBackground"
+            android:text="@string/cancel"
+            android:textStyle="bold"
+            android:textColor="@color/gmapsFragmentBtnText"/>
+
+        <Button
+            android:id="@+id/btn_apply"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/gmaps_fragment_buttons_height"
+            android:layout_marginStart="@dimen/gmaps_fragment_buttons_half_padding"
+            android:layout_weight="1"
+            android:background="@color/gmapsFragmentBtnBackground"
+            android:text="@string/apply"
+            android:textStyle="bold"
+            android:textColor="@color/gmapsFragmentBtnText" />
+
+    </LinearLayout>
+
+</FrameLayout>

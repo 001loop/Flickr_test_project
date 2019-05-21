@@ -1,0 +1,7 @@
+<resources>
+
+    <string name="app_rest_callback_host">auth</string>
+    <string name="app_rest_callback_scheme">flickrapp</string>
+    <string name="app_rest_callback">%1$s://%2$s</string>
+
+</resources>

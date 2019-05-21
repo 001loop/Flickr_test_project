@@ -1,0 +1,127 @@
+<resources>
+    <string name="app_name">Flickr Test Project</string>
+    <string name="menu_item_profile">Profile</string>
+    <string name="menu_item_recent_photos">Recent</string>
+    <string name="menu_item_photo_by_location">Location</string>
+    <string name="menu_item_options">Options</string>
+
+    <!--        errors\warnings     -->
+    <string name="no_internet_connection">No internet connection</string>
+    <string name="check_internet_connection_status">Please, check internet connection status</string>
+    <string name="error">Error</string>
+    <string name="error_unknown">Unknown error. Try again later</string>
+    <string name="error_unknown_internet">Unknown internet error. Try again later</string>
+    <string name="error_unknown_server">Unknown server error. Try again later</string>
+    <string name="error_incorrect_server_data">Incorrect server data. Contact support team or update app or try again later</string>
+    <string name="error_unknown_database">Unknown database error. Try again later</string>
+    <string name="error_description">Error %1$d: %2$s</string>
+    <string name="error_auth">Auth error. Try again later</string>
+    <string name="error_request_token">Request token error</string>
+    <string name="cant_connect_to_flickr">Can`t connect to flickr services</string>
+    <string name="login_failure">Login failure</string>
+
+    <string name="error_database">Database error</string>
+
+    <!--        auth          -->
+    <string name="auth_mail">E-Mail</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_mail_hint">example@mail.com</string>
+    <string name="auth_pasword_hint">enter your password</string>
+    <string name="auth_login">Login</string>
+    <string name="auth_logout">Logout</string>
+    <string name="auth_please_wait">Please, wait...</string>
+
+    <!--        logout fragment          -->
+    <string name="logout_fragment_title">Logout</string>
+    <string name="logout_fragment_message">Are you sure?</string>
+
+    <!--        main menu       -->
+    <string name="camera_roll">Camera Roll</string>
+    <string name="public_photos">Public Photos</string>
+    <string name="albums">Albums</string>
+    <string name="contact_list">Contact List</string>
+
+    <!--        location        -->
+    <string name="location_name">Location name</string>
+    <string name="location_unknown">Unknown location</string>
+    <string name="location_hint_for_user">Please, select coordinates on the map</string>
+    <string name="location_error_select_coordinates">Please, select coordinates!</string>
+    <string name="location_no_photo">No photo for current location</string>
+
+    <!--        album           -->
+    <string name="album_no_photo">No photo for current album</string>
+    <string name="album_no_albums">No albums</string>
+    <string name="no_photos">No photos</string>
+
+    <!--        contact list          -->
+    <string name="contact_list_spinner_title">Search contacts</string>
+    <string name="contact_no_photos">No photos for current contact</string>
+    <string name="contact_no_contacts">No contacts</string>
+
+    <string name="test_main_fragment">Main Fragment</string>
+    <string name="test_camera_roll_fragment">Camera Roll Fragment</string>
+    <string name="test_public_photos_fragment">Public Photos Fragment</string>
+    <string name="test_albums_fragment">Albums Fragment</string>
+    <string name="test_location_fragment">Location Fragment</string>
+    <string name="test_recent_fragment">Recent Fragment</string>
+    <string name="test_profile_fragment">Profile Fragment</string>
+
+    <string name="intent_scheme">oauth</string>
+    <string name="intent_host">codepathtweets</string>
+
+    <!--        photo info           -->
+    <string name="photo_info_description">Description</string>
+    <string name="photo_info_location">Location</string>
+    <string name="photo_info_taken_by">Taken by</string>
+    <string name="photo_info_date_taken">Date taken</string>
+    <string name="photo_info_tags">Tags</string>
+    <string name="photo_info_license">License</string>
+    <string name="photo_info_privacy">Privacy</string>
+    <string name="photo_info_views_count">Views</string>
+
+    <!--        photo license           -->
+    <string name="photo_license_0">All Rights Reserved</string>
+    <string name="photo_license_1">Attribution-NonCommercial-ShareAlike License</string>
+    <string name="photo_license_2">Attribution-NonCommercial License</string>
+    <string name="photo_license_3">Attribution-NonCommercial-NoDerivs License</string>
+    <string name="photo_license_4">Attribution License</string>
+    <string name="photo_license_5">Attribution-ShareAlike License</string>
+    <string name="photo_license_6">Attribution-NoDerivs License</string>
+    <string name="photo_license_7">No known copyright restrictions</string>
+    <string name="photo_license_8">United States Government Work</string>
+    <string name="photo_license_9">Public Domain Dedication (CC0)</string>
+    <string name="photo_license_10">Public Domain Mark</string>
+
+    <!--        photo privacy           -->
+    <string name="photo_privacy_public">Public</string>
+    <string name="photo_privacy_friends">Friends only</string>
+    <string name="photo_privacy_family">Family only</string>
+    <string name="photo_privacy_friends_and_family">Friends and Family</string>
+    <string name="photo_privacy_private">Private</string>
+
+    <!--        about app           -->
+    <string name="about_app">About App</string>
+    <string name="application_name">Name</string>
+    <string name="version">Version</string>
+    <string name="feedback">Feedback</string>
+    <string name="feedback_mail_address">evgeniy.mudrichenko@convergent-usa.com</string>
+    <string name="feedback_mail_subject">Feedback</string>
+    <string name="feedback_mail_text">Please, write your message here</string>
+    <string name="feedback_mail_intent_text">Send email</string>
+
+    <!--        other           -->
+    <string name="ok">OK</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="clear_db">Clear database</string>
+    <string name="check_token">Check Token</string>
+    <string name="print_db">Print database</string>
+    <string name="progress_bar_loading">Loading ...</string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="last_page">No more photos</string>
+
+    <string name="share_intent_message">Look at this photo</string>
+
+</resources>
