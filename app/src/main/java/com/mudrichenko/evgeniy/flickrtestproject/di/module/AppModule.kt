@@ -23,16 +23,28 @@ class AppModule(private val mAppContext: Context) {
    */
 
     @Provides
-    @Named("AlbumsPhotosRepository")
-    fun provideAlbumsPhotosRepository(): AlbumsPhotosRepository = AlbumsPhotosRepository()
-
-    @Provides
     @Named("CameraRollPhotosRepository")
     fun provideCameraRollRepository(): CameraRollPhotosRepository = CameraRollPhotosRepository()
 
     @Provides
     @Named("RecentPhotosRepository")
     fun provideRecentPhotosRepository(): RecentPhotosRepository = RecentPhotosRepository()
+
+    @Provides
+    @Named("PublicPhotosRepository")
+    fun providePublicPhotosRepository(): PublicPhotosRepository = PublicPhotosRepository()
+
+    @Provides
+    @Named("AlbumsRepository")
+    fun provideAlbumsRepository(): AlbumsRepository = AlbumsRepository()
+
+    @Provides
+    @Named("AlbumsPhotosRepository")
+    fun provideAlbumsPhotosRepository(): AlbumsPhotosRepository = AlbumsPhotosRepository()
+
+    @Provides
+    @Named("ContactListRepository")
+    fun provideContactListRepository(): ContactListRepository = ContactListRepository()
 
     @Provides
     @Named("ContactListPhotosRepository")

@@ -30,6 +30,10 @@ class AlbumsPhotosRepository: BasePhotosRepository() {
 
     private fun getRemotePhotosObserver(page: Int): DisposableObserver<ResponsePhotoset> {
         return object : DisposableObserver<ResponsePhotoset>() {
+            override fun onError(e: Throwable) {
+                mErrorCode = ErrorUtils.ERROR_CODE_INTERNET
+                startLoadPhotosFromDb(page)
+            }
             override fun onComplete() {
             }
             override fun onNext(response: ResponsePhotoset) {
@@ -51,10 +55,6 @@ class AlbumsPhotosRepository: BasePhotosRepository() {
                 } else {
                     startUploadPhotosToDb()
                 }
-            }
-            override fun onError(e: Throwable?) {
-                mErrorCode = ErrorUtils.ERROR_CODE_INTERNET
-                startLoadPhotosFromDb(page)
             }
         }
     }

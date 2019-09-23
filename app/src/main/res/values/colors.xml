@@ -3,6 +3,7 @@
     <color name="colorPrimary">#30333F</color>
     <color name="colorPrimaryDark">#30333F</color>      <!-- status bar background  -->
     <color name="colorAccent">#30333F</color>
+    <color name="button">#30333F</color>
     <color name="white">#FFFFFF</color>
     <color name="fragmentContainerBackground">#FF5555</color>
     <!--            main menu          -->

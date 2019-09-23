@@ -55,7 +55,7 @@ class AuthRepository {
 
             }
 
-            override fun onNext(responseBody: ResponseBody?) {
+            override fun onNext(responseBody: ResponseBody) {
                 val responseBodyString = responseBody?.string()
                 if (responseBody != null) {
                     if (mAuthRepositoryListener != null) {
@@ -66,7 +66,7 @@ class AuthRepository {
                 }
             }
 
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
             }
         }
@@ -90,7 +90,7 @@ class AuthRepository {
             override fun onComplete() {
             }
 
-            override fun onNext(responseBody: ResponseBody?) {
+            override fun onNext(responseBody: ResponseBody) {
                 val responseBodyString = responseBody?.string()
                 if (responseBody != null) {
                     if (mAuthRepositoryListener != null) {
@@ -101,7 +101,7 @@ class AuthRepository {
                 }
             }
 
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
             }
 

@@ -1,9 +1,8 @@
 package com.mudrichenko.evgeniy.flickrtestproject.database
 
-
-import android.arch.persistence.room.Database
-import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.mudrichenko.evgeniy.flickrtestproject.data.converter.DbConverter
 
 @Database(entities = [FlickrPhoto::class, FlickrContact::class, FlickrPhotoset::class], version = 1)

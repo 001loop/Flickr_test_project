@@ -1,6 +1,6 @@
 package com.mudrichenko.evgeniy.flickrtestproject.database
 
-import android.arch.persistence.room.*
+import androidx.room.*
 import io.reactivex.Single
 
 @Dao

@@ -86,7 +86,7 @@ class PrefUtils(val context: Context) {
         return authToken
     }
 
-    fun putAuthTokenSecret(authTokenSecret: String) = putPrefByKey(AUTH_TOKEN_SECRET, authTokenSecret)
+    fun putAuthTokenSecret(authTokenSecret: String?) = putPrefByKey(AUTH_TOKEN_SECRET, authTokenSecret)
 
     fun getAuthTokenSecret(): String {
         return getPrefByKey(AUTH_TOKEN_SECRET)

@@ -104,7 +104,7 @@ open class BasePhotosRepository {
                     startUploadPhotosToDb()
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 mErrorCode = ErrorUtils.ERROR_CODE_INTERNET
                 startLoadPhotosFromDb(page)
             }
@@ -161,7 +161,7 @@ open class BasePhotosRepository {
             override fun onComplete() {
                 startUploadPhotosToDb()
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onPhotoListUploadingFinished(mFlickrPhotos)
             }
         }
@@ -180,7 +180,7 @@ open class BasePhotosRepository {
             override fun onComplete() {
                 onPhotoListUploadingFinished(mFlickrPhotos)
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onPhotoListUploadingFinished(mFlickrPhotos)
             }
         }
@@ -211,7 +211,7 @@ open class BasePhotosRepository {
                     onPhotoListUploadingFinished(flickrPhotos)
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onErrorReceived(mErrorUtils.getErrorMessage(mErrorCode, mErrorMessage))
             }
         }

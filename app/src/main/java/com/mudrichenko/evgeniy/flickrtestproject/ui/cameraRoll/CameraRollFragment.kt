@@ -1,15 +1,16 @@
 package com.mudrichenko.evgeniy.flickrtestproject.ui.cameraRoll
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.mudrichenko.evgeniy.flickrtestproject.EndlessScrollListener
 import com.mudrichenko.evgeniy.flickrtestproject.PhotosRecyclerViewAdapter
@@ -53,19 +54,28 @@ class CameraRollFragment: BaseFragment(), CameraRollView,
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_camera_roll, container, false)
+        val mContext = context
         mMainLayout = view.findViewById(R.id.main_layout)
+        // progress wheel
         mProgressWheel = view.findViewById(R.id.progress_wheel)
         mProgressWheel.visibility = View.INVISIBLE
+        mProgressWheel.setText(resources.getString(R.string.progress_bar_loading))
+        mProgressWheel.textSize = resources.getDimensionPixelOffset(R.dimen.wheelProgressBarTextSize)
+        if (mContext != null) {
+            mProgressWheel.textColor = ContextCompat.getColor(mContext, R.color.wheelProgressBarText)
+        }
         mTextViewInfo = view.findViewById(R.id.text_view_info)
         // recyclerView elements
         mSwipeRefreshLayout = view.findViewById(R.id.swipe_container)
         mSwipeRefreshLayout.setOnRefreshListener(this)
         mRecyclerViewItems = ArrayList()
-        mPhotosAdapter = PhotosRecyclerViewAdapter(context!!, mRecyclerViewItems)
+        if (mContext != null) {
+            mPhotosAdapter = PhotosRecyclerViewAdapter(mContext, mRecyclerViewItems)
+        }
         mPhotosAdapter.setOnItemClickListener(this)
         mPhotosRecyclerView = view.findViewById(R.id.recycler_view_photos)
         mPhotosRecyclerView.adapter = mPhotosAdapter
-        val gridLayoutManager = GridLayoutManager(context, NUM_OF_COLUMNS)
+        val gridLayoutManager = GridLayoutManager(mContext, NUM_OF_COLUMNS)
         gridLayoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
             override fun getSpanSize(position: Int): Int {
                 return if (mRecyclerViewItems[position].viewTypeId == PhotosRecyclerViewAdapter.viewTypeBottomText) {
@@ -153,12 +163,12 @@ class CameraRollFragment: BaseFragment(), CameraRollView,
     }
 
     override fun onRefresh() {
-        mCameraRollPresenter.loadFirstPage()
+        mCameraRollPresenter.loadFirstPage(false)
     }
 
     private fun showPhotoFullscreen(flickrPhoto: FlickrPhoto?) {
         val photoFullscreenFragment = PhotoFullscreenFragment.newInstance(flickrPhoto)
-        photoFullscreenFragment.showFragment(activity, R.id.main_menu_layout, false)
+        photoFullscreenFragment.showFragment(activity, R.id.fullscreen_fragment_container, false)
         photoFullscreenFragment.setPhotoFullscreenFragmentListener(this)
     }
 

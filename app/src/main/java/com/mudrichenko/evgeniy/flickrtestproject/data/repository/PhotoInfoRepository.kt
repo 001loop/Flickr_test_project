@@ -83,7 +83,7 @@ class PhotoInfoRepository {
                     startUpdatePhotoInfoInDb(response.photo!!)
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 mErrorCode = ErrorUtils.ERROR_CODE_UNKNOWN
                 val photo = Photo()
                 photo.id = mPhotoId
@@ -109,7 +109,7 @@ class PhotoInfoRepository {
             override fun onComplete() {
                 onPhotoInfoReceived(flickrPhoto)
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onPhotoInfoReceived(flickrPhoto)
             }
         }
@@ -125,7 +125,7 @@ class PhotoInfoRepository {
 
     private fun getLoadPhotoInfoFromDbObserver(photo: Photo, isNeedToDeletePhoto: Boolean): DisposableSingleObserver<FlickrPhoto> {
         return object : DisposableSingleObserver <FlickrPhoto>() {
-            override fun onSuccess(flickrPhoto: FlickrPhoto?) {
+            override fun onSuccess(flickrPhoto: FlickrPhoto) {
                 if (flickrPhoto == null) {
                     if (!mNetworkUtils.isInternetConnectionAvailable()) {
                         onErrorReceived(App.appContext!!.getString(R.string.no_internet_connection))
@@ -140,7 +140,7 @@ class PhotoInfoRepository {
                     }
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onErrorReceived(mErrorUtils.getErrorMessage(mErrorCode, mErrorMessage))
             }
         }
@@ -195,7 +195,7 @@ class PhotoInfoRepository {
                     onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
             }
         }

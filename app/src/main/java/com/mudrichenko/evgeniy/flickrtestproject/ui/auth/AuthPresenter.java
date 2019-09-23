@@ -51,7 +51,7 @@ public class AuthPresenter extends MvpPresenter<AuthView> implements AuthReposit
     }
 
     private void loginToRest() {
-        getViewState().showProgressBar(App.Companion.getAppContext().getResources().getString(R.string.auth_please_wait));
+        getViewState().startLogin();
         mAuthRepository.setAuthRepositoryListener(this);
         mAuthRepository.onRequestToken(this);
     }

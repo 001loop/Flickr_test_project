@@ -79,7 +79,7 @@ class PhotoFullscreenRepository {
                 disposables?.add(disposable)
                 onPhotoUrlReceived(photo)
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 // nothing
                 onErrorReceived()
             }
@@ -91,7 +91,7 @@ class PhotoFullscreenRepository {
             override fun onComplete() {
                 // nothing
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 // nothing
             }
         }

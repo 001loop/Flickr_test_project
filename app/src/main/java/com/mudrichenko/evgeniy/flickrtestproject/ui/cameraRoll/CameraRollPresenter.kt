@@ -1,10 +1,10 @@
 package com.mudrichenko.evgeniy.flickrtestproject.ui.cameraRoll
 
+import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.mudrichenko.evgeniy.flickrtestproject.App
 import com.mudrichenko.evgeniy.flickrtestproject.AppConstants
 import com.mudrichenko.evgeniy.flickrtestproject.PhotosRecyclerViewAdapter
-import com.mudrichenko.evgeniy.flickrtestproject.R
 import com.mudrichenko.evgeniy.flickrtestproject.data.model.RecyclerViewItem
 import com.mudrichenko.evgeniy.flickrtestproject.data.repository.BasePhotosRepository
 import com.mudrichenko.evgeniy.flickrtestproject.data.repository.CameraRollPhotosRepository
@@ -14,7 +14,8 @@ import com.mudrichenko.evgeniy.flickrtestproject.utils.NetworkUtils
 import java.util.ArrayList
 import javax.inject.Inject
 
-class CameraRollPresenterKotlin: MvpPresenter<CameraRollView>(), BasePhotosRepository.RepositoryListener {
+@InjectViewState
+class CameraRollPresenter: MvpPresenter<CameraRollView>(), BasePhotosRepository.RepositoryListener {
 
     @Inject
     lateinit var mNetworkUtils: NetworkUtils
@@ -45,15 +46,6 @@ class CameraRollPresenterKotlin: MvpPresenter<CameraRollView>(), BasePhotosRepos
         loadFirstPage(true)
     }
 
-    fun refreshPhotosList() {
-        mIsListRefreshed = true
-        loadFirstPage(false)
-        mIsInternetConnectionAvailable = mNetworkUtils.isInternetConnectionAvailable()
-        if (!mIsInternetConnectionAvailable) {
-            viewState.showSnackbarMessage(App.appContext!!.resources.getString(R.string.no_internet_connection))
-        }
-    }
-
     fun loadFirstPage(isNeedToShowProgressWheel: Boolean) {
         viewState.resetPhotoList()
         if (isNeedToShowProgressWheel) {
@@ -66,7 +58,7 @@ class CameraRollPresenterKotlin: MvpPresenter<CameraRollView>(), BasePhotosRepos
     }
 
     init {
-       // App.appComponent?.inject(this)
+        App.appComponent!!.inject(this)
     }
 
     private fun onPhotoListLoad() {

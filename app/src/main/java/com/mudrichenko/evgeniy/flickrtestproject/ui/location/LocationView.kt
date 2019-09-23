@@ -9,11 +9,20 @@ import com.mudrichenko.evgeniy.flickrtestproject.data.model.RecyclerViewItem
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface LocationView : MvpView {
 
+    fun setLocationName(locationName: String)
+
     fun showProgressWheel()
 
     fun hideProgressWheel()
 
+    fun showRefreshWheel()
+
+    fun hideRefreshWheel()
+
     fun showInfoMessage(message: String)
+
+    @StateStrategyType(SkipStrategy::class)
+    fun showSnackbarMessage(message: String)
 
     fun hideInfoMessage()
 
@@ -25,7 +34,5 @@ interface LocationView : MvpView {
     fun showPhotoFullscreenFragment(index: Int)
 
     fun lastPageReached()
-
-    fun setLocationName(locationName: String)
 
 }

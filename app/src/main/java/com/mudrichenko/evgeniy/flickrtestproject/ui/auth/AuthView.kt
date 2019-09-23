@@ -17,8 +17,8 @@ interface AuthView : MvpView {
 
     fun showErrorMessage(message: String)
 
-    fun showProgressBar(message: String)
+    fun startLogin()
 
-    fun hideProgressBar()
+    fun LoginEnd()
 
 }

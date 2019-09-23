@@ -2,11 +2,14 @@ package com.mudrichenko.evgeniy.flickrtestproject.ui.auth;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.content.res.ResourcesCompat;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
@@ -35,6 +38,10 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView, View
         mBtnLogin.setOnClickListener(this);
         mTextViewInfo = findViewById(R.id.textViewInfo);
         mProgressWheel = findViewById(R.id.progress_wheel);
+        mProgressWheel.setVisibility(View.INVISIBLE);
+        mTextViewInfo.setVisibility(View.VISIBLE);
+        Typeface fontRegular = ResourcesCompat.getFont(this, R.font.liberation_sans_regular);
+        mTextViewInfo.setTypeface(fontRegular);
     }
 
     private void clickOnLogin() {
@@ -73,26 +80,30 @@ public class AuthActivity extends MvpAppCompatActivity implements AuthView, View
 
     @Override
     public void showMessageNoInternetConnection() {
-        Toast.makeText(this, getString(R.string.no_internet_connection), Toast.LENGTH_SHORT).show();
+        mTextViewInfo.setText(getString(R.string.no_internet_connection));
     }
 
     @Override
-    public void showErrorMessage(String message) {
-        mTextViewInfo.setVisibility(View.VISIBLE);
-        mTextViewInfo.setText(message);
-    }
-
-    @Override
-    public void showProgressBar(@NotNull String message) {
-        mProgressWheel.setVisibility(View.VISIBLE);
-        mTextViewInfo.setVisibility(View.VISIBLE);
-        mTextViewInfo.setText(message);
-    }
-
-    @Override
-    public void hideProgressBar() {
+    public void showErrorMessage(@NotNull String message) {
         mProgressWheel.setVisibility(View.INVISIBLE);
+        mTextViewInfo.setVisibility(View.VISIBLE);
+        mTextViewInfo.setText(message);
+    }
+
+    @Override
+    public void startLogin() {
+        mProgressWheel.setVisibility(View.VISIBLE);
+        mProgressWheel.startSpinning();
         mTextViewInfo.setVisibility(View.INVISIBLE);
     }
+
+    @Override
+    public void LoginEnd() {
+        mProgressWheel.setVisibility(View.INVISIBLE);
+        mTextViewInfo.setVisibility(View.VISIBLE);
+        mTextViewInfo.setText(getResources().getString(R.string.login_success));
+    }
+
+
 
 }

@@ -78,7 +78,7 @@ class ContactListRepository {
                     onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 if (e !is HttpException) {
                     // unknown error (probably no internet connection)
                     mErrorCode = ErrorUtils.ERROR_CODE_UNKNOWN
@@ -113,7 +113,7 @@ class ContactListRepository {
                 Logger.i("getDeleteContactListObserver; contacts size = " + contacts!!.size)
                 startUploadContactsToDb(contacts)
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 Logger.i("getDeleteContactListObserver; onError; e = " + e.toString())
                 startLoadContactsFromDb()
             }
@@ -150,7 +150,7 @@ class ContactListRepository {
             override fun onComplete() {
                 startLoadContactsFromDb()
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 startLoadContactsFromDb()
             }
         }
@@ -166,7 +166,7 @@ class ContactListRepository {
 
     private fun getLoadContactsFromDbObserver(): DisposableSingleObserver<List<FlickrContact>> {
         return object : DisposableSingleObserver<List<FlickrContact>>() {
-            override fun onSuccess(contacts: List<FlickrContact>?) {
+            override fun onSuccess(contacts: List<FlickrContact>) {
                 if (contacts != null) {
                     Logger.i("contactsReceivedDB; size = " + contacts.size)
                     onContactListReceived(contacts)
@@ -175,7 +175,7 @@ class ContactListRepository {
                     onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 onErrorReceived(mErrorUtils.getErrorMessage(-1, null))
             }
         }

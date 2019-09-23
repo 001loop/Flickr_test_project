@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Flickr Test Project</string>
+    <string name="app_name">Flickr Project</string>
     <string name="menu_item_profile">Profile</string>
     <string name="menu_item_recent_photos">Recent</string>
     <string name="menu_item_photo_by_location">Location</string>
@@ -30,6 +30,10 @@
     <string name="auth_login">Login</string>
     <string name="auth_logout">Logout</string>
     <string name="auth_please_wait">Please, wait...</string>
+
+    <!--        login activity          -->
+    <string name="login_please_give_access">Please, give the app access to your flickr account. Tap on &quot;Login&quot; and we will redirect you to the browser. Login</string>
+    <string name="login_success">Login success!</string>
 
     <!--        logout fragment          -->
     <string name="logout_fragment_title">Logout</string>
@@ -104,6 +108,8 @@
     <string name="application_name">Name</string>
     <string name="version">Version</string>
     <string name="feedback">Feedback</string>
+    <string name="firebase_sign_in">Firebase sign in</string>
+    <string name="firebase_sign_out">Firebase sign out</string>
     <string name="feedback_mail_address">evgeniy.mudrichenko@convergent-usa.com</string>
     <string name="feedback_mail_subject">Feedback</string>
     <string name="feedback_mail_text">Please, write your message here</string>

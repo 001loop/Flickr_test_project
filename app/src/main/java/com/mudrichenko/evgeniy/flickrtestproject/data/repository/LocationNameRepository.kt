@@ -84,14 +84,14 @@ class LocationNameRepository {
             override fun onComplete() {
 
             }
-            override fun onNext(response: String?) {
+            override fun onNext(response: String) {
                 if (response == null) {
                     nameReceived("")
                 } else {
                     nameReceived(response)
                 }
             }
-            override fun onError(e: Throwable?) {
+            override fun onError(e: Throwable) {
                 nameReceived("")
             }
         }

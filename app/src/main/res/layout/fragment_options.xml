@@ -39,6 +39,15 @@
             android:layout_gravity="center"
             android:text="@string/auth_logout"/>
 
+        <!--
+        <Button
+            android:id="@+id/btn_firebase_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/firebase_sign_in"/>
+            -->
+
         <Button
             android:id="@+id/btn_about_app"
             android:layout_width="wrap_content"

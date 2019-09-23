@@ -11,4 +11,6 @@ interface OptionsView : MvpView {
 
     fun showLogoutFragment()
 
+    fun changeFirebaseBtnText(isSignedIn: Boolean)
+
 }

@@ -25,4 +25,8 @@
         <item name="android:textSize">@dimen/view_pager_text_size</item>
     </style>
 
+    <style name="ButtonColor" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/button</item>
+    </style>
+
 </resources>

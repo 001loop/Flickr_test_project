@@ -12,17 +12,23 @@ import com.mudrichenko.evgeniy.flickrtestproject.ui.aboutApp.AboutAppFragment;
 import com.mudrichenko.evgeniy.flickrtestproject.ui.BaseFragment;
 import com.mudrichenko.evgeniy.flickrtestproject.ui.logout.LogoutFragment;
 
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class OptionsFragment extends BaseFragment implements OptionsView,
         View.OnClickListener {
 
     @InjectPresenter
     OptionsPresenter mOptionsPresenter;
 
+    private OptionsListener mOptionsListener;
+
     Button btnLogout;
     Button btnClearDb;
     Button btnPrintDb;
     Button btnAboutApp;
     Button btnCheckToken;
+    //Button btnFirebaseSign;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,6 +44,8 @@ public class OptionsFragment extends BaseFragment implements OptionsView,
         btnAboutApp.setOnClickListener(this);
         btnCheckToken = view.findViewById(R.id.btn_check_token);
         btnCheckToken.setOnClickListener(this);
+        //btnFirebaseSign = view.findViewById(R.id.btn_firebase_sign);
+        //btnFirebaseSign.setOnClickListener(this);
         return view;
     }
 
@@ -63,6 +71,11 @@ public class OptionsFragment extends BaseFragment implements OptionsView,
             case R.id.btn_about_app:
                 clickOnAboutApp();
                 break;
+                /*
+            case R.id.btn_firebase_sign:
+                clickOnFirebaseSign();
+                break;
+                */
         }
     }
 
@@ -86,14 +99,39 @@ public class OptionsFragment extends BaseFragment implements OptionsView,
         showAboutAppFragment();
     }
 
+    private void clickOnFirebaseSign() {
+        if (mOptionsListener != null) {
+            mOptionsListener.firebaseSign();
+        }
+    }
+
     @Override
     public void showAboutAppFragment() {
-        AboutAppFragment.newInstance().showFragment(getActivity(), R.id.main_menu_layout, false);
+        AboutAppFragment.newInstance().showFragment(getActivity(), R.id.fullscreen_fragment_container, false);
     }
 
     @Override
     public void showLogoutFragment() {
-        LogoutFragment.newInstance().showFragment(getActivity(), R.id.main_menu_layout, false);
+        LogoutFragment.Companion.newInstance().showFragment(getActivity(), R.id.fullscreen_fragment_container, false);
+    }
+
+    @Override
+    public void changeFirebaseBtnText(boolean isSignedIn) {
+        /*
+        if (isSignedIn) {
+            btnFirebaseSign.setText(getResources().getString(R.string.firebase_sign_out));
+        } else {
+            btnFirebaseSign.setText(getResources().getString(R.string.firebase_sign_in));
+        }
+        */
+    }
+
+    public void setOptionsListener(OptionsListener optionsListener) {
+        mOptionsListener = optionsListener;
+    }
+
+    public interface OptionsListener {
+        void firebaseSign();
     }
 
 }

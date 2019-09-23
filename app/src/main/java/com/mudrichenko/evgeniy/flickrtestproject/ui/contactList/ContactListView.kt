@@ -15,7 +15,14 @@ interface ContactListView : MvpView {
 
     fun hideProgressWheel()
 
+    fun showRefreshWheel()
+
+    fun hideRefreshWheel()
+
     fun showInfoMessage(message: String)
+
+    @StateStrategyType(SkipStrategy::class)
+    fun showSnackbarMessage(message: String)
 
     fun hideInfoMessage()
 

@@ -18,12 +18,7 @@ class ErrorUtilsTest {
 
     @Test(expected = KotlinNullPointerException::class)
     fun testError() {
-
-
-        println(mErrorUtils!!.getErrorMessage(12, "hui"))
-        println(mErrorUtils!!.getErrorMessage(-3232, "SLDF OSKFSLF;SD FLSDFSDF,LSDFSDF SDFS DFS DSD SD SD SDF "))
-        println(mErrorUtils!!.getErrorMessage(0, null))
-
+        //
     }
 
 }

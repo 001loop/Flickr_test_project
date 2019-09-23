@@ -15,7 +15,14 @@ interface AlbumsView : MvpView {
 
     fun hideProgressWheel()
 
+    fun showRefreshWheel()
+
+    fun hideRefreshWheel()
+
     fun showInfoMessage(message: String)
+
+    @StateStrategyType(SkipStrategy::class)
+    fun showSnackbarMessage(message: String)
 
     fun hideInfoMessage()
 
@@ -29,7 +36,6 @@ interface AlbumsView : MvpView {
     fun lastPageReached()
 
     fun onPhotosetListLoaded(mPhotosetsTitles: ArrayList<String>)
-
 
     fun showAlbumsSpinner()
 

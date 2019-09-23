@@ -29,6 +29,7 @@
 
     <!--        main menu interface     -->
     <dimen name="view_pager_text_size">15sp</dimen>
+    <dimen name="login_activity_text_size">18sp</dimen>
 
     <!--        photo info     -->
     <dimen name="photo_info_text_title">15sp</dimen>

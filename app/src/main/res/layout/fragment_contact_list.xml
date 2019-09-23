@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundContactList">
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_contacts"
         android:layout_width="match_parent"
         android:layout_height="@dimen/top_menu_height"
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/child_fragment_layout"
@@ -53,18 +53,18 @@
             ProgressWheel:pwBarWidth="@dimen/wheelProgressBarRimWidth"
             ProgressWheel:pwRimWidth="@dimen/wheelProgressBarProgressWidth" />
 
-        <android.support.v4.widget.SwipeRefreshLayout
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/swipe_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <android.support.v7.widget.RecyclerView
+            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_photos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
 
-        </android.support.v4.widget.SwipeRefreshLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     </FrameLayout>
 

@@ -16,8 +16,10 @@ import io.reactivex.observers.DisposableCompletableObserver
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.schedulers.Schedulers
+import kotlinx.coroutines.GlobalScope
 import java.util.ArrayList
 import javax.inject.Inject
+import kotlinx.coroutines.launch
 
 class AlbumsRepository {
 
