@@ -39,6 +39,12 @@ interface FlickrPhotoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPhoto(flickrPhoto: FlickrPhoto)
 
+    // coroutines
+    /*
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertPhoto(flickrPhoto: FlickrPhoto)
+    */
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPhotos(flickrPhotos: List<FlickrPhoto>)
 

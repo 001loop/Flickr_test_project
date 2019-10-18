@@ -2,6 +2,7 @@ package com.mudrichenko.evgeniy.flickrtestproject.api
 
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.experimental.CoroutineCallAdapterFactory
 import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,6 +24,7 @@ class Api {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(getGson()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            //.addCallAdapterFactory(CoroutineCallAdapterFactory())
             .client(getHttpClient())
             .build()
 

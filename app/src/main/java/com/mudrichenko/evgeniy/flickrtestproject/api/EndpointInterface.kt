@@ -9,6 +9,7 @@ import com.mudrichenko.evgeniy.flickrtestproject.api.pojo.responsePhotoset.Respo
 import com.mudrichenko.evgeniy.flickrtestproject.api.pojo.responsePhotosets.ResponsePhotosets
 import io.reactivex.Observable
 import okhttp3.ResponseBody
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Url
 
@@ -16,6 +17,12 @@ interface EndpointInterface {
 
     @GET
     fun requestPhotosObservable(@Url url: String): Observable<ResponsePhotos>
+
+    // coroutines
+    /*
+    @GET
+    suspend fun requestPhotoInfo(@Url url: String): Response<ResponsePhotoInfo>
+    */
 
     @GET
     fun requestPhotoInfo(@Url url: String): Observable<ResponsePhotoInfo>

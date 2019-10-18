@@ -219,7 +219,7 @@ class LocationFragment : BaseFragment(), LocationView,
 
     private fun showMapFragment() {
         mMapFragment = MapFragment.newInstance(mLocationPresenter.latLng)
-        mMapFragment.showFragment(activity, R.id.main_menu_layout, false, mMapFragmentTag)
+        mMapFragment.showFragment(activity, R.id.fullscreen_fragment_container, false, mMapFragmentTag)
         mMapFragment.setMapFragmentListener(this)
     }
 
