@@ -7,6 +7,7 @@ import android.widget.FrameLayout
 import android.widget.RelativeLayout
 
 import com.arellomobile.mvp.MvpAppCompatActivity
+import com.arellomobile.mvp.presenter.InjectPresenter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mikepenz.materialdrawer.Drawer
 import com.mikepenz.materialdrawer.DrawerBuilder
@@ -27,7 +28,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 import javax.inject.Inject
 
-class MainActivity : MvpAppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : MvpAppCompatActivity(), MainView, BottomNavigationView.OnNavigationItemSelectedListener {
+
+    @InjectPresenter
+    lateinit var mMainPresenter: MainPresenter
 
     @Inject
     lateinit var mPrefUtils: PrefUtils
@@ -66,7 +70,7 @@ class MainActivity : MvpAppCompatActivity(), BottomNavigationView.OnNavigationIt
                         )
                 .withOnDrawerItemClickListener(object : Drawer.OnDrawerItemClickListener {
                     override fun onItemClick(view: View?, position: Int, drawerItem: IDrawerItem<*>): Boolean {
-                        onMenuItemSelected(drawerItem.identifier.toInt())
+                        mMainPresenter.onMenuItemSelected(drawerItem.identifier.toInt())
                         return false
                     }
                 }).build()
@@ -77,18 +81,9 @@ class MainActivity : MvpAppCompatActivity(), BottomNavigationView.OnNavigationIt
             bottomNavigationView.setOnNavigationItemSelectedListener(this)
             BottomNavigationViewHelper.disableShiftMode(bottomNavigationView)
         }
-        if (savedInstanceState == null) {
-            // by default, select mainMenuFragment
-            mCurrentFragmentId = BOT_MENU_ITEM_DEFAULT_ID
-            onMenuItemSelected(mCurrentFragmentId)
-        } else {
-            // restore mainMenuFragment Instance
-            //mCurrentFragmentId = savedInstanceState.getInt(CURRENT_FRAGMENT_ID);
-            //mBottomNavigationView.setSelectedItemId(mCurrentFragmentId);
-        }
     }
 
-    fun onMenuItemSelected(itemId: Int) {
+    override fun onMenuItemSelected(itemId: Int) {
         mMaterialDrawer?.setSelection(itemId.toLong(), false)
         val bottomNavigationView = mBottomNavigationView
         when (itemId) {
@@ -96,21 +91,18 @@ class MainActivity : MvpAppCompatActivity(), BottomNavigationView.OnNavigationIt
                 if (bottomNavigationView != null) {
                     bottomNavigationView.menu.findItem(BOT_MENU_ITEM_RECENT_ID).isChecked = true
                 }
-                //mMaterialDrawer?.setSelection(2, false)
                 showFragment(RecentFragment.newInstance())
             }
             BOT_MENU_ITEM_PROFILE_ID -> {
                 if (bottomNavigationView != null) {
                     bottomNavigationView.menu.findItem(BOT_MENU_ITEM_PROFILE_ID).isChecked = true
                 }
-                //mMaterialDrawer?.setSelection(1, false)
                 showFragment(ProfileFragment.newInstance())
             }
             BOT_MENU_ITEM_LOCATION_ID -> {
                 if (bottomNavigationView != null) {
                     bottomNavigationView.menu.findItem(BOT_MENU_ITEM_LOCATION_ID).isChecked = true
                 }
-                //mMaterialDrawer?.setSelection(3, false)
                 showFragment(LocationFragment.newInstance())
             }
             BOT_MENU_ITEM_OPTIONS_ID -> {
@@ -118,16 +110,10 @@ class MainActivity : MvpAppCompatActivity(), BottomNavigationView.OnNavigationIt
                     Logger.i("BOT_MENU; options")
                     bottomNavigationView.menu.findItem(BOT_MENU_ITEM_OPTIONS_ID).isChecked = true
                 }
-                //mMaterialDrawer?.setSelection(5, false)
                 showFragment(OptionsFragment.newInstance())
             }
             else -> showFragment(RecentFragment.newInstance())
         }
-    }
-
-    override fun onSaveInstanceState(bundle: Bundle) {
-        super.onSaveInstanceState(bundle)
-        bundle.putInt(CURRENT_FRAGMENT_ID, mCurrentFragmentId)
     }
 
     fun showFragment(fragment: BaseFragment) {
@@ -141,7 +127,7 @@ class MainActivity : MvpAppCompatActivity(), BottomNavigationView.OnNavigationIt
     // bottom navigation menu selected
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         mCurrentFragmentId = item.itemId
-        onMenuItemSelected(item.itemId)
+        mMainPresenter.onMenuItemSelected(item.itemId)
         return true
     }
 

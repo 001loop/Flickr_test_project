@@ -3,9 +3,6 @@ package com.mudrichenko.evgeniy.flickrtestproject
 import android.app.Application
 import androidx.room.Room
 import android.content.Context
-import com.google.android.gms.common.api.GoogleApiClient
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 
 import com.mudrichenko.evgeniy.flickrtestproject.database.AppDatabase
 import com.mudrichenko.evgeniy.flickrtestproject.di.component.AppComponent
@@ -41,12 +38,6 @@ class App : Application() {
 
         var appComponent: AppComponent? = null
             private set
-
-        var mGoogleApiClient: GoogleApiClient? = null
-
-        var mFirebaseAuth: FirebaseAuth? = null
-
-        var mFirebaseUser: FirebaseUser? = null
 
     }
 

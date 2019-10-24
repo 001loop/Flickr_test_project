@@ -4,8 +4,6 @@ import android.os.AsyncTask;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.mudrichenko.evgeniy.flickrtestproject.App;
 import com.mudrichenko.evgeniy.flickrtestproject.database.FlickrContact;
 import com.mudrichenko.evgeniy.flickrtestproject.database.FlickrPhoto;
@@ -15,9 +13,7 @@ import com.mudrichenko.evgeniy.flickrtestproject.utils.AuthUtils;
 import com.mudrichenko.evgeniy.flickrtestproject.utils.PrefUtils;
 import com.orhanobut.logger.Logger;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.inject.Inject;
 
@@ -35,30 +31,9 @@ public class OptionsPresenter extends MvpPresenter <OptionsView> {
     @Inject
     PrefUtils mPrefUtils;
 
-    // Firebase instance variables
-    private FirebaseAuth mFirebaseAuth;
-    private FirebaseUser mFirebaseUser;
-    private String mFirebaseUsername;
-    private String mFirebasePhotoUrl;
 
     public OptionsPresenter() {
         App.Companion.getAppComponent().inject(this);
-        initFirebase();
-    }
-
-    private void initFirebase() {
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        mFirebaseUser = mFirebaseAuth.getCurrentUser();
-        if (mFirebaseUser == null) {
-            // Not signed in, launch the Sign In activity
-            getViewState().changeFirebaseBtnText(false);
-        } else {
-            getViewState().changeFirebaseBtnText(true);
-            mFirebaseUsername = mFirebaseUser.getDisplayName();
-            if (mFirebaseUser.getPhotoUrl() != null) {
-                mFirebasePhotoUrl = mFirebaseUser.getPhotoUrl().toString();
-            }
-        }
     }
 
     // debug method

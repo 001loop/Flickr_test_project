@@ -35,6 +35,7 @@ interface AlbumsView : MvpView {
 
     fun lastPageReached()
 
+    @StateStrategyType(SkipStrategy::class)
     fun onPhotosetListLoaded(mPhotosetsTitles: ArrayList<String>)
 
     fun showAlbumsSpinner()

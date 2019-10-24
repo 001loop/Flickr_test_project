@@ -108,8 +108,6 @@
     <string name="application_name">Name</string>
     <string name="version">Version</string>
     <string name="feedback">Feedback</string>
-    <string name="firebase_sign_in">Firebase sign in</string>
-    <string name="firebase_sign_out">Firebase sign out</string>
     <string name="feedback_mail_address">evgeniy.mudrichenko@convergent-usa.com</string>
     <string name="feedback_mail_subject">Feedback</string>
     <string name="feedback_mail_text">Please, write your message here</string>

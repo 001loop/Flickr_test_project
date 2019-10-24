@@ -20,6 +20,7 @@ import com.mudrichenko.evgeniy.flickrtestproject.ui.launcher.LauncherActivity
 import com.mudrichenko.evgeniy.flickrtestproject.ui.main.MainActivity
 import com.mudrichenko.evgeniy.flickrtestproject.ui.location.LocationFragment
 import com.mudrichenko.evgeniy.flickrtestproject.ui.logout.LogoutFragment
+import com.mudrichenko.evgeniy.flickrtestproject.ui.main.MainPresenter
 import com.mudrichenko.evgeniy.flickrtestproject.ui.photoFullscreen.PhotoFullscreenFragment
 import com.mudrichenko.evgeniy.flickrtestproject.ui.photoInfo.PhotoInfoFragment
 import com.mudrichenko.evgeniy.flickrtestproject.utils.AuthUtils
@@ -79,6 +80,8 @@ interface AppComponent {
     fun inject(repository: PhotoFullscreenRepository)
 
     // Presenters
+
+    fun inject(presenter: MainPresenter)
 
     fun inject(presenter: AlbumsPresenter)
 

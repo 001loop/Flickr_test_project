@@ -47,6 +47,7 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:2.24.0'
+    testImplementation 'org.mockito:mockito-inline:2.24.0'
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.12.1'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -61,7 +62,7 @@ dependencies {
     // Logs
     implementation 'com.orhanobut:logger:2.2.0'
     // room
-    def room_version = "2.2.0-rc01" // 2.1.0 for latest stable version
+    def room_version = "2.2.1" // 2.1.0 for latest stable version
     implementation "androidx.room:room-runtime:$room_version"
     kapt "androidx.room:room-compiler:$room_version" // For Kotlin use kapt instead of annotationProcessor
     // optional - Kotlin Extensions and Coroutines support for Room
@@ -119,11 +120,6 @@ dependencies {
     implementation "androidx.annotation:annotation:1.1.0"
     implementation "com.google.android.material:material:1.0.0"
     implementation "androidx.constraintlayout:constraintlayout:2.0.0-beta2"
-    // firebase
-    implementation 'com.google.firebase:firebase-core:17.2.0'
-    implementation 'com.google.firebase:firebase-auth:19.0.0'
-    implementation 'com.google.android.gms:play-services-auth:17.0.0'
-    implementation 'com.google.firebase:firebase-messaging:20.0.0'
     // multidex
     implementation 'com.android.support:multidex:1.0.3'
 }

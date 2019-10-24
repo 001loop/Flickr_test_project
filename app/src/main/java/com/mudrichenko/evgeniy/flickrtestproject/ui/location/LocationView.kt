@@ -1,12 +1,12 @@
 package com.mudrichenko.evgeniy.flickrtestproject.ui.location
 
 import com.arellomobile.mvp.MvpView
-import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy
+import com.arellomobile.mvp.viewstate.strategy.AddToEndStrategy
 import com.arellomobile.mvp.viewstate.strategy.SkipStrategy
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType
 import com.mudrichenko.evgeniy.flickrtestproject.data.model.RecyclerViewItem
 
-@StateStrategyType(AddToEndSingleStrategy::class)
+@StateStrategyType(AddToEndStrategy::class)
 interface LocationView : MvpView {
 
     fun setLocationName(locationName: String)
